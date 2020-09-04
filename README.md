@@ -1,2 +1,3 @@
+![alt text](/images/app-it.white.png "Logo Title Text")
 # iOS_development
 ### there's more to come ....
