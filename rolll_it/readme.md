@@ -6,4 +6,4 @@
 * Arrays & Randomizing
 
 
-![](./images/Screenshot%202020-09-03%20at%208.59.59%20PM.png)
+![](/images/screenshot.png)
