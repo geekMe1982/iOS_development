@@ -21,6 +21,7 @@ struct AboutView: View {
         VStack {
             Text("🎯 Bullseye 🎯")
                 .modifier(AboutHeadingStyle())
+                .navigationBarTitle("About Bullseye")
             Text("This is Bullseye, the game where you can win points and earn fame by dragging a slider.")
                 .modifier(AboutBodyStyle())
                 .lineLimit(nil)
