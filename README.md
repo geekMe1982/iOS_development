@@ -2,8 +2,8 @@
 
 ![](/images/app-it.white.png "Appit logo")
 
-## List of Apps:
-#### 1.RollIt game
+# List of Apps:
+#### 1.Roll-It game
 #### 2.Lucky strike game
 #### 3.Smoosh App.
 #### 4.Love meter App.
