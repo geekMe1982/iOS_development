@@ -1,4 +1,4 @@
-# iOS evelopment
+# iOS development
 
 ![](/images/app-it.white.png "Appit logo")
 
