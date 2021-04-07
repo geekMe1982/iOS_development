@@ -7,7 +7,7 @@
 ### [2.Lucky strike game](https://github.com/geekMe1982/iOS_development/tree/master/lucky_strike) :video_game:
 ### 3.Smoosh App.:iphone:
 ### 4.Love meter App.:iphone:
-### [5.Clima](https://github.com/geekMe1982/iOS_development/tree/master/Clima-master) :sun: :clouds:
+### [5.Clima - A weather App.](https://github.com/geekMe1982/iOS_development/tree/master/Clima-master) ⛅: ☁️:
 
 
 
