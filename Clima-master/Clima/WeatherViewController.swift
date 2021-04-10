@@ -8,13 +8,15 @@
 
 import UIKit
 import CoreLocation
+import Alamofire
+import SwiftyJSON
 
 
 class WeatherViewController: UIViewController, CLLocationManagerDelegate {
     
     //Constants
     let WEATHER_URL = "http://api.openweathermap.org/data/2.5/weather"
-    let APP_ID = "e72ca729af228beabd5d20e3b7749713"
+    let APP_ID = "812a9f3c32d83740aad0c501ccdf2466"
     /***Get your own App ID at https://openweathermap.org/appid ****/
     
 
@@ -39,8 +41,6 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
-    
-        
         
     }
     
@@ -50,7 +50,23 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
     /***************************************************************/
     
     //Write the getWeatherData method here:
-    
+    func getWeatherData(url: String, parameters: [String : String]){
+        Alamofire.request(url, method: .get, parameters: parameters).responseJSON{
+            response in
+            if response.result.isSuccess{
+                
+                
+                let weatherJSON: JSON = JSON(response.result.value!)
+                print(weatherJSON)
+                
+            }else{
+                print("Error \(String(describing: response.result.error))")
+                self.cityLabel.text = "connection issue"
+                
+            }
+        }
+        
+    }
 
     
     
@@ -86,9 +102,18 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location = locations[locations.count - 1]
         if location.horizontalAccuracy > 0 {
-            locationManager.startUpdatingLocation()
+            locationManager.stopUpdatingLocation()
             
             print("longitude = \(location.coordinate.longitude), latitude= \(location.coordinate.latitude)")
+            let latitude = String(location.coordinate.latitude)
+            let longitude = String(location.coordinate.longitude)
+            
+            let params : [String : String] = ["lat" : latitude, "lon" : longitude, "appid" : APP_ID]
+            
+            
+            getWeatherData(url: WEATHER_URL, parameters: params)
+            
+            
         }
     }
     
